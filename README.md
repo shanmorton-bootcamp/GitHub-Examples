@@ -27,7 +27,8 @@ gh auth login
 ```
 
 List your repos
-```gh repo list
+```
+gh repo list
 ```
 
 View Repo
