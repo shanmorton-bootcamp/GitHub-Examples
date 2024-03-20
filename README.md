@@ -42,6 +42,43 @@ Delete a repo
 gh repo delete [repo_name] [flags]
 ```
 
+## GitHub API
+
+#### GitHub REST API
+https://docs.github.com/en/rest?apiVersion=2022-11-28
+
+https://docs.github.com/en/rest/quickstart?apiVersion=2022-11-28&tool=curl
+
+```
+curl --request GET \
+--url "https://api.github.com/repos/octocat/Spoon-Knife/issues" \
+--header "Accept: application/vnd.github+json" \
+--header "Authorization: Bearer YOUR-TOKEN"
+```
+
+
+#### GitHub GraphQL
+https://docs.github.com/en/graphql
+
+Used ChatGPT to write a query to find the repo's for a user name "ShanMorton"
+
+```
+query {
+  user(login: "ShanMorton") {
+    repositories(first: 10, privacy: PUBLIC, orderBy: {field: CREATED_AT, direction: DESC}) {
+      nodes {
+        name
+        description
+        url
+      }
+    }
+  }
+}
+```
+and entered it into this page:
+https://docs.github.com/en/graphql/overview/explorer
+
+
 
 
 
