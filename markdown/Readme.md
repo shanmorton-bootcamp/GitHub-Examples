@@ -10,4 +10,3 @@
 - lists
 - images
 - links
-- 
